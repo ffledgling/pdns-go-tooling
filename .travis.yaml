@@ -1,0 +1,15 @@
+sudo: required
+
+services:
+    # For the swagger-cli docker image which is used to build the go bindings
+    - docker
+
+before_install:
+      - sudo apt-get install git tree
+
+install:
+      - ./clone-latest-release.sh
+
+script:
+    - ./generate-go-bindings.sh
+    - tree
