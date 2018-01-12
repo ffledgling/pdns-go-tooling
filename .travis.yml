@@ -12,4 +12,14 @@ install:
 
 script:
     - ./generate-go-bindings.sh
-    - tree
+    - ls -al
+
+after_success:
+    - ./publish.sh
+
+
+env:
+  global:
+    # Github Auth Token in an env var called PDNS_GO_SERVICE_TOKEN
+    secure: "Mgs5GRULAPm9jFbbCxIkpN2uZfnMzVUE75lJoBa6rHnAjAbtCvNQVUJPGZOSIGuQJRTyswM8mjeeG6+G179dwUXZbeqpzNpe6KJF3iBH8NIRx6H7abU2nSnJPEk8tsT9K/aT6NwpeOmOZ+eWJKIL96851pE9wuLSipF7A8fBC8HUVjBFzMZUTotW/V5ayYrlXcaMi72knsPZ2S5UiwftNaql20Wh1XCogGxtoehF1TncLzN7K8iv52leI1Oy1YNsB4SyEguQTLqPkEuXWVmclcFtaR09RDGalInboc/b3q81ctVzJaMjcsY8yO72qV/J/Djr1NZObfSp7ysWqYxd+A42D5dUySMlEJ0yz63eknxjceLn5dnhD3dtawY1wRQf4wBn6qMuwAZvW3M8Yq/iQiK9S0pBawohQsOv5CTgwPAm078FjWV4G4vgaIt+G2LViFKRHeFI6+s8cM5YwBoP5+wBVOgCA1vCk0jp8ru9tIXB0dd5LtrH3/j4Qo/0y6HuxU8SrDs8ub61GBbTyCnOJLiUbkwcg95YpdouB5mGkFAyypqE3V3a4gO2B2/A66ScCpyg+zrQ36yFSxrevQpc28F3tAZugLXoh6HliBYmFwSXm2Vo1iHVDSo2bgT2y9IXT0N+/DIlhtK0MiNy6ozyEAxR5i/kvFFRcs2gOYZXfxk="
+

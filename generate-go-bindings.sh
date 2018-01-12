@@ -9,3 +9,5 @@ java -jar swagger-codegen-cli.jar generate \
     -i pdns/docs/http-api/swagger/authoritative-api-swagger.yaml \
     -l go \
     -o out/go
+
+tree out/go
