@@ -13,10 +13,7 @@ install:
 script:
     - ./generate-go-bindings.sh
     - ls -al
-
-after_success:
     - ./publish.sh
-
 
 env:
   global:
