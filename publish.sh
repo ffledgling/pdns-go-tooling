@@ -2,13 +2,14 @@
 
 set -euxo pipefail
 
-PDNS_GO_REPO="ffledgling/pdns-go-test.git"
-PDNS_GO_REPO_URL="https://github.com/${PDNS_GO_REPO}"
+GITHUB_USERNAME="ffledgling"
+PDNS_GO_REPO="pdns-go-test"
+PDNS_GO_REPO_URL="https://github.com/${GITHUB_USERNAME}/${PDNS_GO_REPO}.git"
 
 git clone "${PDNS_GO_REPO_URL}"
 
 # Sync the new bindings
-rsync -avz out/go/ pdns-go-test/
+rsync -avz out/go/ ${PDNS_GO_REPO}
 
 # Get in the repo because we need to do a bunch of stuff
 pushd pdns-go-test
@@ -29,7 +30,7 @@ git log -5 --decorate --all
 
 # We don't want to leak the token in the logs
 set +x
-git remote add write-remote https://${PDNS_GO_SERVICE_TOKEN}@github.com/${PDNS_GO_REPO}
+git remote add write-remote https://${PDNS_GO_SERVICE_TOKEN}@github.com/${GITHUB_USERNAME}/${PDNS_GO_REPO}.git
 set -x
 
 # But we also want to see the remote was added successfully
