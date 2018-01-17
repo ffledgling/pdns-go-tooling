@@ -3,7 +3,7 @@
 set -euxo pipefail
 
 GITHUB_USERNAME="ffledgling"
-PDNS_GO_REPO="pdns-go-test"
+PDNS_GO_REPO="pdns-go"
 PDNS_GO_REPO_URL="https://github.com/${GITHUB_USERNAME}/${PDNS_GO_REPO}.git"
 
 git clone "${PDNS_GO_REPO_URL}"
