@@ -12,7 +12,7 @@ git clone "${PDNS_GO_REPO_URL}"
 rsync -avz out/go/ ${PDNS_GO_REPO}
 
 # Get in the repo because we need to do a bunch of stuff
-pushd pdns-go-test
+pushd ${PDNS_GO_REPO}
 
 git status
 
